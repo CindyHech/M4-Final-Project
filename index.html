@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/26d3833ce9.js" crossorigin="anonymous"></script>
+    <script src="styles.css"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <section id="landing">
+      <nav>
+        <div class="nav__container">
+          <img
+            class="logo"
+            src="./assets/Blue Jay Bird Logo Template (150 x 40 px) (150 x 40 px).png"
+            alt=""
+          />
+          <ul class="nav__links">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">Find your movie</a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">Contact</a>
+            </li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()"
+                  >Find your movie</a
+                >
+              </li>
+              <li class="menu__list">
+                <a class="menu__link no-cursor" onclick="closeMenu()"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header>
+        <div class="header__container">
+          <div class="header__description">
+            <h1>America's most awarded movie subscription platform</h1>
+            <h2>
+              Find your perfect movie with <span class="bluejay">Blue Jay</span>
+            </h2>
+            <div class="input__wrapper">
+              <input class="input" type="text" placeholder="Search by name" />
+              <button class="btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <figure class="header__img--wrapper">
+              <img src="./assets/cinema graphic.png" alt="" />
+            </figure>
+          </div>
+        </div>
+      </header>
+    </section>
+  </body>
+</html>
