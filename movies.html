@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find your movie</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/26d3833ce9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="movies.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body id="movies__body">
+    <section id="movies__landing">
+      <nav>
+        <div class="nav__container">
+          <img
+            class="logo"
+            src="./assets/Blue Jay Bird Logo Template (150 x 40 px) (150 x 40 px).png"
+            alt=""
+          />
+          <ul class="movie__nav--links  nav__links">
+            <li><a href="#" class="movie__nav--link nav__link">Home</a></li>
+            <li><a href="#" class="movie__nav--link nav__link">Find your movie </a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">Contact</a>
+            </li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop" style="visibility: hidden">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#features" class="menu__link" onclick="closeMenu()"
+                  >Books</a
+                >
+              </li>
+              <li class="menu__list">
+                <a class="menu__link no-cursor" onclick="closeMenu()"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header>
+        <div class="movies__header--container">
+          <div class="movies__header--description">
+            <h1 class="movie__h1">Browse our movies</h1>
+          </div>
+          <div class="input__wrapper--movies">
+            <input
+              type="text"
+              class="input--movies"
+              placeholder="Search by name"
+            />
+            <div class="search__icon--wrapper">
+              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+        <div class="overlay__img">
+          <img class="img"  src="./assets/2.png" alt="" />
+        </div>
+      </header>
+
+      <main id="movie__search">
+        <div class="search__container">
+          <div class="search__wrapper">
+            <h1 class="search__title">Search results</h1>
+          </div>
+          <div class="price__filter">
+            <h2>Price range</h2>
+            <div class="slide__wrapper"></div>
+          </div>
+        </div>
+        <div class="movies">
+          <div class="movie__content--wrapper"></div>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
