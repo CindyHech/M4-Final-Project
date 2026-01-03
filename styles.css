@@ -37,6 +37,10 @@ li {
   list-style-type: none;
 }
 
+header {
+  padding-top: 20px;
+}
+
 h1 {
   font-size: 50px;
   color: #099feb;
@@ -202,9 +206,12 @@ header {
   max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .header__description {
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,20 +300,25 @@ header {
 
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
-@media (max-width: 768px) {
-   .nav__container{
+@media (max-width: 750px) {
+  .btn__menu {
+    display: block;
+  }
+  
+  .nav__container{
     height: 40px;
     padding-top: 40px;
-   } 
+  } 
 
-   .nav__link {
+  /* .nav__link {
     font-size: 16px;
-    
-   }
+  } */
 
-  .header__description {
-    padding: 0 24px;
+   
+  .nav__links {
+    display: none;
   }
+
 
   h1 {
     font-size: 40px;
@@ -323,12 +335,69 @@ header {
   .input__wrapper {
     max-width: 600px;
     
+} 
 }
+
+@media (max-width: 680px) {
   
+  .header__description {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding-left: 16px;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .input__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  }
+
+  .input {
+    height: 70px;
+    width: 500px;
+  }
+
+  .btn { 
+   margin-top: 20px;
+   max-width: 500px;
+   width: 100%;
+   margin-left: 0px;
+
+  }
+
+  .header__img--wrapper {
+   padding-top: 50px;
+   width: 500px;
+  }
+
+  .input--movies {
+    width: 550px;
+  }
+
+  .fa-sharp {
+    right: 10%;
+    transform: scale(2);
+  }
+
+  .search__title {
+    text-align: center;
+  }
+  
+
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
-@media (max-width: 550px) {
+@media (max-width: 580px) {
   .btn__menu {
     display: block;
   }
@@ -340,7 +409,8 @@ header {
 
   .header__description {
     max-width: 550px;
-    
+    display: flex;
+    align-items: center;
   }
 
   .input__wrapper{
@@ -362,6 +432,28 @@ header {
    width: 100%;
    margin-left: 0px;
 
+  }
+
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .movie__h1 {
+    font-size: 36px;
+  }
+
+  .input--movies {
+    width: 500px;
+  }
+
+  .fa-sharp {
+    right: 10%;
+    transform: scale(2);
+  }
+
+  h2{
+    font-size: 24px;
   }
 
 }
