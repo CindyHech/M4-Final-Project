@@ -46,6 +46,19 @@ h1 {
   color: #099feb;
   margin-bottom: 24px;
   text-align: center;
+  animation: animate__h1 800ms 200ms backwards;
+}
+
+@keyframes animate__h1 {
+   0% {
+    transform: scale(0);
+   }
+   80% {
+    transform: scale(1.1);
+   }
+   100% {
+    transform: scale(1);
+   }
 }
 
 .movie__h1{
@@ -59,6 +72,18 @@ h2 {
   font-size: 32px;
   margin-bottom: 32px;
   text-align: center;
+  animation: fade-up 650ms 400ms backwards;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button {
@@ -223,6 +248,7 @@ header {
  position: relative;
  display: flex;
  justify-content: center;
+ animation: fade-up 650ms 400ms backwards;
 }
 
 .input {
@@ -239,6 +265,7 @@ header {
  position: relative;
  display: flex;
  justify-content: center;
+ animation: fade-up 650ms 400ms backwards;
 }
 
 .input--movies{
