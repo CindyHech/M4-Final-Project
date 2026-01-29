@@ -222,7 +222,7 @@ button:active {
 
 
 header {
-  height: calc(100vh - 80px);
+  height: 326px;
 }
 
 .header__container {
