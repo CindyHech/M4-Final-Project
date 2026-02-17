@@ -1,41 +1,47 @@
 // API: "http://www.omdbapi.com/?apikey=61ba8310&s=game"
 
-const movieListEl = document.querySelector('.movies');
+const movieListEl = document.querySelector(".movies");
+
+let movies = []; 
 
 async function renderMovies(searchTerm = "game") {
- const movies = await fetch (`http://www.omdbapi.com/?apikey=61ba8310&s=${searchTerm}`);
- const moviesData = await movies.json();
- console.log(moviesData)
+  const moviesRes = await fetch(
+    `http://www.omdbapi.com/?apikey=61ba8310&s=${searchTerm}`,
+  );
+  const moviesData = await moviesRes.json();
+  console.log(moviesData);
 
- if (!moviesData.Search) {
+  if (!moviesData.Search) {
     movieListEl.innerHTML = `<p class="no__results">No movies found for "${searchTerm}"</p>`;
     return;
- }
+  }
 
- movieListEl.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
+  movies = moviesData.Search; 
+  movieListEl.innerHTML = movies.map((movie) => moviesHTML(movie)).join(""); 
 }
 
-
-
 function searchChange(event) {
-    const value = event.target.value.trim();
+  const value = event.target.value.trim();
   if (value.length > 2) {
     renderMovies(value);
-  }  
+  }
 }
 
 function filterMovies(event) {
-  if(filter === 'YEAR') {
-     movies.sort((a, b) => (b.year)- (a.year) );
+  const filter = event.target.value; 
+
+  if (filter === "YEAR") {
+    movies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+  } else if (filter === "TYPE") {
+    const order = { movie: 1, series: 2, game: 3 };
+    movies.sort((a, b) => order[a.Type] - order[b.Type]); 
   }
-  else if (filter === 'TYPE') {
-     movies.sort((a, b) => (a.movie || b.series) - (a.series || b.movie));
-  }
+
+  movieListEl.innerHTML = movies.map((movie) => moviesHTML(movie)).join("");
 }
 
-
 function moviesHTML(movie) {
-    return `<div class="movie">
+  return `<div class="movie">
         <figure class="movie__img--wrapper">
         <img class="movie__img" src="${movie.Poster}" alt="${movie.Title}">
         </figure>
