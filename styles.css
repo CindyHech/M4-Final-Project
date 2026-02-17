@@ -91,7 +91,7 @@ button {
 }
 
 button:active {
-  transform: translateY(1px);
+  transform: translateX(1px);
 }
 
 .btn {
@@ -268,6 +268,8 @@ header {
  animation: fade-up 650ms 400ms backwards;
 }
 
+
+
 .input--movies{
  border: 1px solid #0a1f44;
  width: 100%;
@@ -277,6 +279,8 @@ header {
  border-radius: 20px;
  padding: 0 15px 0 25px;
 }
+
+
 
 .fa-solid {
  padding: 12px 20px;
@@ -290,6 +294,9 @@ header {
  position: absolute;
  top: 40%;
  right: 5%;
+ border: none;
+ background-color: white;
+ transition: all 150ms ease;
 }
 
 .header__img--wrapper {
@@ -445,8 +452,11 @@ header {
 
   .input__wrapper {
     max-width: 600px;
-    
-} 
+  }
+  
+  .movie {
+   width: 50%;
+  }
 }
 
 @media (max-width: 680px) {
@@ -495,6 +505,7 @@ header {
     width: 550px;
   }
 
+
   .fa-sharp {
     right: 10%;
     transform: scale(2);
@@ -504,7 +515,10 @@ header {
     text-align: center;
   }
   
-
+  .movie {
+    width: 50%;
+ 
+  }
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
@@ -565,6 +579,10 @@ header {
 
   h2{
     font-size: 24px;
+  }
+
+  .movie {
+   width: 75%;
   }
 
 }
