@@ -9,7 +9,10 @@ async function renderMovies() {
  movieListEl.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
 }
 
-
+function searchChange(event) {
+    console.log(event.target.value);
+    renderMovies(event.target.value);
+}
 
 
 function moviesHTML(movie) {
@@ -23,4 +26,3 @@ function moviesHTML(movie) {
     </div>`;
 }
 
-renderMovies();
