@@ -24,6 +24,15 @@ function searchChange(event) {
   }  
 }
 
+function filterMovies(event) {
+  if(filter === 'YEAR') {
+     movies.sort((a, b) => (b.year)- (a.year) );
+  }
+  else if (filter === 'TYPE') {
+     movies.sort((a, b) => (a.movie || b.series) - (a.series || b.movie));
+  }
+}
+
 
 function moviesHTML(movie) {
     return `<div class="movie">
