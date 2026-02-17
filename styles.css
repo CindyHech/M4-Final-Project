@@ -87,7 +87,7 @@ h2 {
 }
 
 button {
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 button:active {

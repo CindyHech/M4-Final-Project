@@ -2,23 +2,33 @@
 
 const movieListEl = document.querySelector('.movies');
 
-async function renderMovies() {
- const movies = await fetch ("http://www.omdbapi.com/?apikey=61ba8310&s=game");
+async function renderMovies(searchTerm = "game") {
+ const movies = await fetch (`http://www.omdbapi.com/?apikey=61ba8310&s=${searchTerm}`);
  const moviesData = await movies.json();
  console.log(moviesData)
+
+ if (!moviesData.Search) {
+    movieListEl.innerHTML = `<p class="no__results">No movies found for "${searchTerm}"</p>`;
+    return;
+ }
+
  movieListEl.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
 }
 
+
+
 function searchChange(event) {
-    console.log(event.target.value);
-    renderMovies(event.target.value);
+    const value = event.target.value.trim();
+  if (value.length > 2) {
+    renderMovies(value);
+  }  
 }
 
 
 function moviesHTML(movie) {
     return `<div class="movie">
         <figure class="movie__img--wrapper">
-        <img class="movie__img" src="${movie.Poster}" alt="">
+        <img class="movie__img" src="${movie.Poster}" alt="${movie.Title}">
         </figure>
         <h2 class="movie__title">${movie.Title}</h2>
         <h4 class="movie__year">${movie.Year}</h4>
@@ -26,3 +36,4 @@ function moviesHTML(movie) {
     </div>`;
 }
 
+renderMovies();
