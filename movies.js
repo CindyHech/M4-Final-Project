@@ -1,4 +1,4 @@
-// API: "http://www.omdbapi.com/?apikey=61ba8310&s=game"
+// API: "https://www.omdbapi.com/?apikey=61ba8310&s=game"
 
 const movieListEl = document.querySelector(".movies");
 
@@ -6,7 +6,7 @@ let movies = [];
 
 async function renderMovies(searchTerm = "game") {
   const moviesRes = await fetch(
-    `http://www.omdbapi.com/?apikey=61ba8310&s=${searchTerm}`,
+    `https://www.omdbapi.com/?apikey=61ba8310&s=${searchTerm}`,
   );
   const moviesData = await moviesRes.json();
   console.log(moviesData);
